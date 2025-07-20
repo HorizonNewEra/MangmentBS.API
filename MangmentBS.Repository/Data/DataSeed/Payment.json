@@ -1,0 +1,28 @@
+[
+    {
+        "PaymentMethod":"Cash",
+        "Description":"Cash",
+        "ClientId":"10101010101010",
+        "BuildingId":1,
+        "FlatId":1,
+        "StartPrice":1000,
+        "FullPrice":10000,
+        "FullMonths":9,
+        "RestMonths":9,
+        "MonthlyPrice":1000,
+        "CollectingDay":10
+    },
+    {
+        "PaymentMethod":"Cash",
+        "Description":"Cash",
+        "ClientId":"10101010101010",
+        "BuildingId":2,
+        "FlatId":5,
+        "StartPrice":1000,
+        "FullPrice":10000,
+        "FullMonths":9,
+        "RestMonths":9,
+        "MonthlyPrice":1000,
+        "CollectingDay":10
+    }
+]

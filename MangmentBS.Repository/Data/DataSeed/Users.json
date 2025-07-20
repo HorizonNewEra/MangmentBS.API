@@ -1,0 +1,14 @@
+[
+    {
+        "Id": "11111111111111",
+        "Name": "Badr",
+        "UserName": "Badr",
+        "Password": "123456",
+        "Email": "bemad123321@gmail.com",
+        "PhoneNumber": "01234567890",
+        "Address": "123 Main St, Springfield, USA",
+        "CreatedAt": "2023-01-01",
+        "IsActive": true,
+        "Role": "Administrator"
+    }
+]

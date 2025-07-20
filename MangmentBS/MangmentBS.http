@@ -1,0 +1,6 @@
+@MangmentBS_HostAddress = http://localhost:5024
+
+GET {{MangmentBS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

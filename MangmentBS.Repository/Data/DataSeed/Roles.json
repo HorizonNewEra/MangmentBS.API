@@ -1,0 +1,66 @@
+[
+    {
+        "Id": "Engineer",
+        "RoleArabic": "مهندس"
+    },
+    {
+        "Id": "Employee",
+        "RoleArabic": "موظف"
+    },
+    {
+        "Id": "Employee",
+        "RoleArabic": "موظف"
+    },
+    {
+        "Id": "Manager",
+        "RoleArabic": "مدير"
+    },
+    {
+        "Id": "Developer",
+        "RoleArabic": "مطور"
+    },
+    {
+        "Id": "Analyst",
+        "RoleArabic": "محلل"
+    },
+    {
+        "Id": "Administrator",
+        "RoleArabic": "مدير النظام"
+    },
+    {
+        "Id": "Support",
+        "RoleArabic": "دعم فني"
+    },
+    {
+        "Id": "Sales",
+        "RoleArabic": "مبيعات"
+    },
+    {
+        "Id": "Marketing",
+        "RoleArabic": "تسويق"
+    },
+    {
+        "Id": "HR",
+        "RoleArabic": "الموارد البشرية"
+    },
+    {
+        "Id": "Finance",
+        "RoleArabic": "مالية"
+    },
+    {
+        "Id": "Legal",
+        "RoleArabic": "قانوني"
+    },
+    {
+        "Id": "Operations",
+        "RoleArabic": "عمليات"
+    },
+    {
+        "Id": "Product Manager",
+        "RoleArabic": "مدير المنتج"
+    },
+    {
+        "Id": "Accountant",
+        "RoleArabic": "محاسب"
+    }
+]
