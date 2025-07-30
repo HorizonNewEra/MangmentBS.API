@@ -59,14 +59,14 @@ namespace MangmentBS.Services.Services.InstallmentServices
         public async Task<ErrorResponce> PayInstallment(int Id)
         {
             var installment = await unitOfWork.Repository<Installment, int>().GetByIdAsync(new InstallmentSpecifications(Id));
-            if (installment == null) return new ErrorResponce("404", $"الاقساطة برقم {Id} غير موجودة");
-            if (installment.IsPaid) return new ErrorResponce("400", $"الاقساطة برقم {Id} مدفوعة بالفعل");
+            if (installment == null) return new ErrorResponce("404", "القسط غير موجودة");
+            if (installment.IsPaid) return new ErrorResponce("400", $"هذا القسط مدفوع مسبقا");
             installment.IsPaid = true;
             installment.PaidDate = DateTime.Now;
             unitOfWork.Repository<Installment, int>().Update(installment);
             var result = await unitOfWork.SaveChangesAsync();
-            if (result > 0) return new ErrorResponce("200", $"تم دفع الاقساطة بنجاح");
-            return new ErrorResponce("400", $"حدث خطأ أثناء دفع الاقساطة برقم {Id}");
+            if (result > 0) return new ErrorResponce("200", $"تم دفع القسط بنجاح");
+            return new ErrorResponce("400", $"حدث خطأ أثناء دفع القسط");
         }
     }
 }

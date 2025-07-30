@@ -1,4 +1,5 @@
 ﻿using MangmentBS.API.Errors;
+using MangmentBS.Core.Dtos.Installment;
 using MangmentBS.Core.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -22,10 +23,10 @@ namespace MangmentBS.API.Controllers
             if (result == null) return NotFound(new ApiError(404, $"رقم القصت غير صحيح"));
             return Ok(result);
         }
-        [HttpPost("PayInstallment/{id}")]
-        public async Task<IActionResult> PayInstallment(int id)
+        [HttpPost("PayInstallment")]
+        public async Task<IActionResult> PayInstallment(PayInstallmentPrams param)
         {
-            var result = await installmentService.PayInstallment(id);
+            var result = await installmentService.PayInstallment(param.Id);
             if (result.Status != "200")
             {
                 return BadRequest(new ApiError(400, result.Message));

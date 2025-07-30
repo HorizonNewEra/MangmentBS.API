@@ -34,7 +34,7 @@ namespace MangmentBS.Services.Services.HomeServices
                 installmentDetails.InstallmentAmount = installment.Amount;
                 installmentDetails.Id = installment.Id;
                 installmentDetails.Name = payment.Client.Name;
-                installmentDetails.Address = payment.Client.Address;
+                installmentDetails.Address = payment.Building.Name;
                 installmentDetails.Phone = payment.Client.PhoneNumber;
                 homeInstallmentDetails.Add(installmentDetails);
             }
