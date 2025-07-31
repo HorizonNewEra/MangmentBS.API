@@ -52,7 +52,7 @@ namespace MangmentBS.Services.Services.PaymentServices
                     Amount = Installment.Amount,
                     IsPaid = Installment.IsPaid,
                     DueDateString = Installment.DueDate.ToString("dd/MM/yyyy"),
-                    PaidDateString = Installment.PaidDate?.ToString("dd/MM/yyyy") ?? "لم يتم دفع القصت"
+                    PaidDateString = Installment.PaidDate?.ToString("dd/MM/yyyy") ?? "لم يتم دفع القسط"
                 });
             }
             var paymentview = new PaymentDetails()

@@ -9,6 +9,7 @@ namespace MangmentBS.Core.Dtos.Client
 {
     public class ClientFlatView
     {
+        public int FlatId { get; set; }
         public string BuildingName { get; set; }
         public int FlatNumber { get; set; }
         public int Floor { get; set; }

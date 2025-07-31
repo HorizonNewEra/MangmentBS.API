@@ -98,7 +98,8 @@ namespace MangmentBS.Services.Services.ClientServices
                     Floor=flat.Floor,
                     SellingPrice=flat.SellingPrice??0,
                     Size=flat.Size,
-                    FlatContractImages= flat.FlatContractImages.Select(p => $"{configuration["BaseUrl"]}/{p.ImageLink}").ToList()
+                    FlatId= flat.Id,
+                    FlatContractImages = flat.FlatContractImages.Select(p => $"{configuration["BaseUrl"]}/{p.ImageLink}").ToList()
                 });
             }
             foreach (var pay in payments)
@@ -112,7 +113,8 @@ namespace MangmentBS.Services.Services.ClientServices
                     MonthlyPrice = pay.MonthlyPrice,
                     PaymentMethod = pay.PaymentMethod,
                     RestMonths = pay.RestMonths,
-                    StartPrice= pay.StartPrice
+                    StartPrice= pay.StartPrice,
+                    PaymentId= pay.Id
                 });
             }
             return new ClientDetailsView()

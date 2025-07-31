@@ -54,21 +54,17 @@ namespace MangmentBS.Services.Services.FlatServices
         }
         public async Task<ErrorResponce> EditFlat(EditFlatView view)
         {
-            if (view.Id == null || view.Id == 0) return new ErrorResponce("400", "رقم الشقة مطلوب");
+            if (view.Id == 0) return new ErrorResponce("400", "رقم الشقة مطلوب");
             var flats = await unitOfWork.Repository<Flat, int>().GetAllAsync();
             var flat = flats.FirstOrDefault(p => p.Id == view.Id);
             if (flat == null) return new ErrorResponce("400", "هذه الشقة غير موجودة");
-            unitOfWork.Repository<Flat, int>().Update(new Flat()
-            {
-                Id = view.Id,
-                BuildingId=view.BuildingId??flat.BuildingId,
-                FlatNumber=view.FlatNumber?? flat.FlatNumber,
-                Floor=view.Floor??flat.Floor,
-                Size = view.Size ?? flat.Size,
-                StanderdPrice=view.StanderdPrice??flat.Size
-            });
+            flat.FlatNumber = view.FlatNumber ?? flat.FlatNumber;
+            flat.Floor = view.Floor ?? flat.Floor;
+            flat.Size = view.Size ?? flat.Size;
+            flat.StanderdPrice = view.StanderdPrice ?? flat.StanderdPrice;
+            unitOfWork.Repository<Flat, int>().Update(flat);
             var result = await unitOfWork.SaveChangesAsync();
-            if (result > 0) new ErrorResponce("200", "تم تعديل الشقة بنجاح");
+            if (result > 0) return new ErrorResponce("200", "تم تعديل الشقة بنجاح");
             return new ErrorResponce("400", "حدث خطأ أثناء تعديل الشقة");
         }
         public async Task<PaginationResponse<FlatTableView>> GetAllFlatTableViewAsync(FlatSpecificationsParams Params)

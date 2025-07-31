@@ -61,8 +61,11 @@ namespace MangmentBS.Services.Services.InstallmentServices
             var installment = await unitOfWork.Repository<Installment, int>().GetByIdAsync(new InstallmentSpecifications(Id));
             if (installment == null) return new ErrorResponce("404", "القسط غير موجودة");
             if (installment.IsPaid) return new ErrorResponce("400", $"هذا القسط مدفوع مسبقا");
+            var payment = await unitOfWork.Repository<Payment, int>().GetByIdAsync(new PaymentSpecifications(installment.PaymentId));
+            payment.RestMonths -= 1;
             installment.IsPaid = true;
             installment.PaidDate = DateTime.Now;
+            unitOfWork.Repository<Payment, int>().Update(payment);
             unitOfWork.Repository<Installment, int>().Update(installment);
             var result = await unitOfWork.SaveChangesAsync();
             if (result > 0) return new ErrorResponce("200", $"تم دفع القسط بنجاح");

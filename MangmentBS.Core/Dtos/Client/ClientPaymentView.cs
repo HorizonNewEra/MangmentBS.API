@@ -9,6 +9,7 @@ namespace MangmentBS.Core.Dtos.Client
 {
     public class ClientPaymentView
     {
+        public int PaymentId { get; set; }
         public string PaymentMethod { get; set; }
         public string Description { get; set; }
         public double StartPrice { get; set; }
